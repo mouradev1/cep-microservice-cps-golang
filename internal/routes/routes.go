@@ -13,6 +13,7 @@ func SetupRoutes(app *fiber.App) {
 			"version": "1.2.1",
 			"status":  "OK",
 			"router":  "/cep/:cep",
+			"server":  "Golang with Fiber",
 		})
 	})
 }
