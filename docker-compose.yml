@@ -8,7 +8,7 @@ services:
     container_name: apiceps_api_1
     restart: unless-stopped
     ports:
-      - "8887:3000"
+      - "8881:3000"
     environment:
       - PORT=3000
       - MONGODB_URI=${MONGODB_URI}
@@ -23,7 +23,7 @@ services:
     container_name: apiceps_api_2
     restart: unless-stopped
     ports:
-      - "8888:3000"
+      - "8882:3000"
     environment:
       - PORT=3000
       - MONGODB_URI=${MONGODB_URI}
