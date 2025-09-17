@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  apiceps-api-1:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: apiceps_api_1
+    restart: unless-stopped
+    ports:
+      - "8887:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=${MONGODB_URI}
+      - REDIS_URL=${REDIS_URL}
+    networks:
+      - apiceps_network
+
+  apiceps-api-2:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: apiceps_api_2
+    restart: unless-stopped
+    ports:
+      - "8888:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=${MONGODB_URI}
+      - REDIS_URL=${REDIS_URL}
+    networks:
+      - apiceps_network
+
+
+networks:
+  apiceps_network:
+    driver: bridge
