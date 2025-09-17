@@ -10,7 +10,7 @@ func SetupRoutes(app *fiber.App) {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
 			"message": "API de Consulta de CEP está funcionando!",
-			"version": "1.2.1",
+			"version": "1.2.2",
 			"status":  "OK",
 			"router":  "/cep/:cep",
 			"server":  "Golang with Fiber",
